@@ -101,13 +101,15 @@
                         if ($isOnSameGroup === false) {
                             echo '<tr class="f-white">';
                             if ($showNumColumn || $grandTotalSkip > 1) {
-                                echo '<td class="bg-black" colspan="' . $grandTotalSkip . '"><b>Grand Total</b></td>';
+                                echo '<td class="bg-black" colspan="' . $grandTotalSkip . '"><b>Total</b></td>';
                             }
                             $dataFound = false;
                             foreach ($columns as $colName => $colData) {
                                 if (array_key_exists($colName, $showTotalColumns)) {
                                     if ($showTotalColumns[$colName] == 'point') {
                                         echo '<td class="left bg-black"><b>' . number_format($total[$colName], 2, '.', ',') . '</b></td>';
+                                    } else if ($showTotalColumns[$colName] == 'int') {
+                                        echo '<td class="left bg-black"><b>' . $total[$colName] . '</b></td>';
                                     } else {
                                         echo '<td class="left bg-black"><b>' . strtoupper($showTotalColumns[$colName]) . ' ' . number_format($total[$colName], 2, '.', ',') . '</b></td>';
                                     }
@@ -150,13 +152,15 @@
             @endforeach
             @if ($showTotalColumns != [] && $ctr > 1)
                 <tr class="f-white">
-                    <td colspan="{{ $grandTotalSkip }}" class="bg-black"><b>Grand Total</b></td> {{-- For Number --}}
+                    <td colspan="{{ $grandTotalSkip }}" class="bg-black"><b>Total</b></td> {{-- For Number --}}
                     <?php $dataFound = false; ?>
                     @foreach ($columns as $colName => $colData)
                         @if (array_key_exists($colName, $showTotalColumns))
                             <?php $dataFound = true; ?>
                             @if ($showTotalColumns[$colName] == 'point')
                                 <td class="bg-black left"><b>{{ number_format($total[$colName], 2, '.', ',') }}</b></td>
+                            @elseif ($showTotalColumns[$colName] == 'int')
+                                <td class="bg-black left"><b>{{ $total[$colName] }}</b></td>
                             @else
                                 <td class="bg-black left"><b>{{ strtoupper($showTotalColumns[$colName]) }} {{ number_format($total[$colName], 2, '.', ',') }}</b></td>
                             @endif
