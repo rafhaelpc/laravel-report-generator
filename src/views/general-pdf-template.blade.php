@@ -236,7 +236,7 @@
 									<?php $dataFound = true; ?>
 									@if ($showTotalColumns[$colName] == 'point')
 										<td class="right"><b>{{ number_format($total[$colName], 2, '.', ',') }}</b></td>
-									@elseif ($showTotalColumns[$colName] == 'point')
+									@elseif ($showTotalColumns[$colName] == 'int')
 										<td class="right"><b>{{ $total[$colName] }}</b></td>
 									@else
 										<td class="right"><b>{{ strtoupper($showTotalColumns[$colName]) }} {{ number_format($total[$colName], 2, '.', ',') }}</b></td>
