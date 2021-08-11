@@ -164,7 +164,9 @@
 	    								if (array_key_exists($colName, $showTotalColumns)) {
 	    									if ($showTotalColumns[$colName] == 'point') {
 	    										echo '<td class="right"><b>' . number_format($total[$colName], 2, '.', ',') . '</b></td>';
-	    									} else {
+	    									} else if ($showTotalColumns[$colName] == 'int') {
+												echo '<td class="right"><b>' . $total[$colName] . '</b></td>';
+											} else {
 	    										echo '<td class="right"><b>' . strtoupper($showTotalColumns[$colName]) . ' ' . number_format($total[$colName], 2, '.', ',') . '</b></td>';
 	    									}
 	    									$dataFound = true;
