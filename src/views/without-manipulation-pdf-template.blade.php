@@ -147,7 +147,7 @@
                                 if ($isOnSameGroup === false) {
                                     echo '<tr class="bg-black f-white">';
                                     if ($showNumColumn || $grandTotalSkip > 1) {
-                                        echo '<td colspan="' . ($grandTotalSkip) . '"><b>Grand Total</b></td>';
+                                        echo '<td colspan="' . ($grandTotalSkip) . '"><b>Total</b></td>';
                                     }
                                     $dataFound = false;
                                     foreach ($columns as $colName => $colData) {
@@ -197,7 +197,7 @@
                     @if ($showTotalColumns != [] && $ctr > 1)
                         <tr class="bg-black f-white">
                             @if ($showNumColumn || $grandTotalSkip > 1)
-                                <td colspan="{{ $grandTotalSkip }}"><b>Grand Total</b></td> {{-- For Number --}}
+                                <td colspan="{{ $grandTotalSkip }}"><b>Total</b></td> {{-- For Number --}}
                             @endif
                             <?php $dataFound = false; ?>
                             @foreach ($columns as $colName => $colData)
