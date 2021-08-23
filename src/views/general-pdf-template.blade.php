@@ -91,7 +91,7 @@
 		<div class="wrapper">
 		    <div class="pb-5">
 			    <div class="middle pb-10 title">
-			        {{ $headers['title'] }}
+			        {!! $headers['title'] !!}
 			    </div>
     			@if ($showMeta)
 				<div class="head-content">

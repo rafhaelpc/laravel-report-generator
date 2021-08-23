@@ -50,7 +50,7 @@
         ?>
         <table>
             <tr>
-                <td colspan="{{ count($columns) + 1 }}" class="center"><h1>{{ $headers['title'] }}</h1></td>
+                <td colspan="{{ count($columns) + 1 }}" class="left"><h1>{!! $headers['title'] !!}</h1></td>
             </tr>
             @if ($showMeta)
                 @foreach($headers['meta'] as $name => $value)
